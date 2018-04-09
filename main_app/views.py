@@ -8,6 +8,9 @@ def index(request):
     books = Book.objects.all()
     return render(request, 'index.html', {'books': books})
 
+def detail(request, book_id):
+    book = Book.objects.get(id=book_id)
+    return render(request, 'detail.html', {'book': book})
 # class Book:
 #     def __init__(self, name, author, pages, description, rating, img_url):
 #         self.name = name
